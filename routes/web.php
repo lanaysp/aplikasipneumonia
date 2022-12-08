@@ -35,7 +35,7 @@ Route::get('/edukasi', EdukasiComponent::class);
 Route::get('/edukasi/detail/{id}', EdukasiDetailComponent::class)->name('detail.edukasi');
 
 Route::middleware('role:admin|user|faskes')->group(function () {
-    Route::get('/deteksi-pneumonia', DeteksiPneumoniaComponent::class);
+    Route::get('/deteksi-pneumonia', DeteksiPneumoniaComponent::class)->name('screening');
 });
 
 Route::middleware('role:admin')->group(function () {

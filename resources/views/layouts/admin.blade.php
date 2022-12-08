@@ -9,12 +9,15 @@
 		<link rel="canonical" href="Https://preview.keenthemes.com/metronic8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+        <script src="https://cdn.ckeditor.com/ckeditor5/35.3.2/classic/ckeditor.js"></script>
+
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
 		<link href="{{ url('assets/admin/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
 		<link href="{{ url('assets/admin/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+
 		<!--end::Global Stylesheets Bundle-->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
@@ -72,6 +75,13 @@
 		<script src="{{ url('assets/admin/js/custom/modals/create-app.js') }}"></script>
 		<script src="{{ url('assets/admin/js/custom/modals/upgrade-plan.js') }}"></script>
 		<script src="{{ url('assets/admin/plugins/custom/fslightbox/fslightbox.bundle.js') }}"></script>
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>
 
 		<!--end::Page Custom Javascript-->
         @livewireScripts

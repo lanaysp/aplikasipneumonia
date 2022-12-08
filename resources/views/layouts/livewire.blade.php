@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="{{ url('assets/style.css') }}">
     <!-- Web App Manifest-->
     <link rel="manifest" href="{{ url('assets/manifest.json') }}">
+
+    <script src="https://cdn.tiny.cloud/1/tj8gxz33b5zb1zt73jekaz1r67y18l75lp3cskz3hlrwi0yh/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
     @stack('styles')
@@ -85,6 +87,19 @@
     <script src="{{ url('assets/js/no-internet.js') }}"></script>
     <script src="{{ url('assets/js/active.js') }}"></script>
     <script src="{{ url('assets/js/pwa.js') }}"></script>
+    <script>
+        tinymce.init({
+          selector: 'textarea',
+          plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
+          toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+          tinycomments_mode: 'embedded',
+          tinycomments_author: 'Author name',
+          mergetags_list: [
+            { value: 'First.Name', title: 'First Name' },
+            { value: 'Email', title: 'Email' },
+          ]
+        });
+      </script>
     @livewireScripts
     @yield('scripts')
     @stack('scripts')

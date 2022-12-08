@@ -48,7 +48,9 @@
                         <span class="required">Deskripsi</span>
                     </label>
                     <!--end::Label-->
-                    <textarea wire:model.defer='data.deskripsi' cols="3" rows="5" class="form-control form-control-sm form-control-solid"></textarea>
+                    <div wire:ignore>
+                        <textarea wire:model.defer='data.deskripsi' cols="3" rows="5" class="form-control form-control-sm form-control-solid" name="message" id="message"></textarea>
+                    </div>
                 </div>
                 <div class="row row-cols-lg-2">
                     <div class="d-flex flex-column mb-8 fv-row">
@@ -89,3 +91,17 @@
     </div>
     <!--end::Modal dialog-->
 </form>
+@push('scripts')
+<script>
+    ClassicEditor
+        .create(document.querySelector('#message'))
+        .then(editor => {
+            editor.model.document.on('change:data', () => {
+            @this.set('message', editor.getData());
+            })
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+@endpush

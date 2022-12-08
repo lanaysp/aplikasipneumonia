@@ -75,6 +75,6 @@ class BlogModal extends Component
     {
         return view('livewire.modal.faskes.blog-modal', [
             'kategori' => Categori::get(),
-        ]);
+        ])->layout('layouts.admin');
     }
 }
