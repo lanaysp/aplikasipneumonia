@@ -1,3 +1,4 @@
+<form wire:submit.prevent="submit">
 <div class="container">
     <!-- Profile Wrapper-->
     <div class="profile-wrapper-area py-3">
@@ -15,7 +16,6 @@
       <!-- User Meta Data-->
       <div class="card user-data-card">
         <div class="card-body">
-           <form action="">
             <div class="mb-3">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" wire:model.debounce="data.batuk" value="1" id="batuk">
@@ -96,9 +96,37 @@
                     </label>
                 </div>
             </div>
-            <button class="btn btn-success w-100" type="submit">Kalkulasi</button>
-          </form>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="skor" wire:model.debounce="data.skor" hidden>
+            </div>
+            <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#KalkulasiModal" type="button">Kalkulasi</button>
+            {{-- <button class="btn btn-warning mt-2 w-100" type="reset">Reset</button> --}}
         </div>
       </div>
     </div>
 </div>
+<!-- Modal -->
+<div wire:ignore.self class="modal fade" id="KalkulasiModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Hasil Skrining</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          @if ($this->data->skor >= 5)
+              Terinfeksi
+          @else
+            tidak terdeteksi
+          @endif
+        </div>
+        <div class="modal-footer">
+            @if ($this->data->skor >= 5)
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" wire:click="submit">Ya</button>
+            @endif
+        </div>
+      </div>
+    </div>
+</div>
+</form>

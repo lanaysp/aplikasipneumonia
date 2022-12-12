@@ -11,7 +11,7 @@
                 <div class="col-4">
                     <div class="card catagory-card">
                         <div class="card-body">
-                            <a class="text-danger" href="{{ url('') }}">
+                            <a class="text-danger" href="{{ route('admin.news') }}">
                                 <img src="{{ url('assets/img/icons/webinar.png') }}" class="w-50 mb-2" alt="">
                                 <span>Edukasi</span>
                             </a>
@@ -21,8 +21,8 @@
                 <div class="col-4">
                     <div class="card catagory-card">
                         <div class="card-body">
-                            <a class="text-danger" href="{{ url('') }}">
-                                <img src="{{ url('assets/img/icons/webinar.png') }}" class="w-50 mb-2" alt="">
+                            <a class="text-danger" href="{{ route('screening') }}">
+                                <img src="{{ url('assets/img/icons/screening.png') }}" class="w-50 mb-2" alt="">
                                 <span>Skrining Pneumonia</span>
                             </a>
                         </div>

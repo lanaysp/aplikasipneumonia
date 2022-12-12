@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class DeteksiPneumonia extends Model
 {
-    protected $table   = 'sskrining';
+    protected $table   = 'skrinig';
     protected $guarded = ['id'];
 }
