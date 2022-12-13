@@ -115,17 +115,17 @@
         </div>
         <div class="modal-body">
           @if ($this->data->skor >= 5)
-              Terinfeksi
+              Lanjut Ke Fasilitas Terdekat
           @else
-            tidak terdeteksi
+             Tidak Beresiko
           @endif
         </div>
+        @if ($this->data->skor >= 5)
         <div class="modal-footer">
-            @if ($this->data->skor >= 5)
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" wire:click="submit">Ya</button>
-            @endif
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" wire:click="submit">Ya</button>
         </div>
+        @endif
       </div>
     </div>
 </div>
