@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\User;
 
+use App\Models\DataAnak;
 use App\Models\DeteksiPneumonia;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Support\Facades\Auth;
@@ -11,6 +12,7 @@ use Livewire\Component;
 class DeteksiPneumoniaComponent extends Component
 {
     public $data;
+    public $data_anak;
 
     protected $rules = [
         'data.user_id' => '',
@@ -26,12 +28,24 @@ class DeteksiPneumoniaComponent extends Component
         'data.mendengkur' => '',
         'data.skor' => '',
         'data.keterangan' => '',
+
+        'data_anak.nama' => 'required',
+        'data_anak.tanggal_lahir' => 'required',
+        'data_anak.nama_orang_tua' => 'required',
+        'data_anak.no_hp' => 'required',
+        'data_anak.alamat' => 'required',
+
     ];
 
     public function mount()
     {
         $data = DeteksiPneumonia::firstOrNew(["user_id" => Auth::user()->id]);
+
+        $data_anak = DataAnak::firstOrNew(["user_id" => 1]);
+
         $this->data = $data;
+
+        $this->data_anak = $data_anak;
     }
 
     public function submit()
@@ -44,6 +58,22 @@ class DeteksiPneumoniaComponent extends Component
             try {
                 $this->data->save();
                 redirect()->route('home');
+            } catch (\Throwable $ex) {
+                Log::error($ex);
+                $this->emit('swal', ['', 'Terjadi kesalahan.', 'error']);
+            }
+    }
+
+    public function submitDataAnak()
+    {
+        $this->withValidator(function (Validator $validator) {
+            if ($validator->fails()) {
+                    $this->emit('swal', ['Whooops!', $validator->errors()->first(), 'error']);
+                }
+            })->validate();
+            try {
+                // dd($this->data_anak);
+                $this->data_anak->save();
             } catch (\Throwable $ex) {
                 Log::error($ex);
                 $this->emit('swal', ['', 'Terjadi kesalahan.', 'error']);

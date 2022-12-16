@@ -48,6 +48,8 @@
                         <span class="required">Deskripsi</span>
                     </label>
                     <!--end::Label-->
+                    <textarea class="form-control form-control-sm" wire:model.defer="data_anak.alamat" cols="30" rows="4"></textarea>
+
                     <div wire:ignore>
                         <textarea wire:model.defer='data.deskripsi' cols="3" rows="5" class="form-control form-control-sm form-control-solid" name="message" id="message"></textarea>
                     </div>
@@ -91,17 +93,4 @@
     </div>
     <!--end::Modal dialog-->
 </form>
-@push('scripts')
-<script>
-    ClassicEditor
-        .create(document.querySelector('#message'))
-        .then(editor => {
-            editor.model.document.on('change:data', () => {
-            @this.set('message', editor.getData());
-            })
-        })
-        .catch(error => {
-            console.error(error);
-        });
-</script>
-@endpush
+

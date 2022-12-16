@@ -38,13 +38,18 @@ Route::middleware('role:admin|user|faskes')->group(function () {
     Route::get('/deteksi-pneumonia', DeteksiPneumoniaComponent::class)->name('screening');
 });
 
-Route::middleware('role:admin')->group(function () {
+Route::middleware('role:admin|faskes')->group(function () {
     Route::prefix('admin')->group(function () {
         Route::get('/dashboard', DashboardComponent::class)->name('admin.dashboard');
+
+    });
+});
+
+Route::middleware('role:admin')->group(function () {
+    Route::prefix('admin')->group(function () {
         Route::get('/user-list', UserListComponent::class)->name('admin.user-list');
         Route::get('/general', GeneralComponent::class)->name('admin.general');
         Route::get('/slider', HeroComponent::class)->name('admin.slider');
-
         Route::get('/artikel', BlogComponen::class)->name('admin.news');
         Route::get('/kategori', CategoryComponen::class)->name('admin.kategori');
     });
