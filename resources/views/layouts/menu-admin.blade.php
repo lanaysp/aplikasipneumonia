@@ -5,8 +5,8 @@
         <!--end::Aside mobile toggle-->
         <!--begin::Logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-15">
-            <a href="index.html">
-                <img alt="Logo" src="{{ url('assets/admin/media/logos/logo-2-dark.svg') }}" class="h-35px" />
+            <a href="/app">
+                <img alt="Logo" src="{{ url('assets/img/icons/lungs.png') }}" class="h-70px" />
             </a>
         </div>
         <!--end::Logo-->
@@ -184,7 +184,7 @@
                                 </span>
                                 <div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px">
                                     <div class="menu-item">
-                                        <a class="menu-link py-3" href="">
+                                        <a class="menu-link py-3" href="{{ route('data-pasien') }}">
                                             <span class="menu-icon">
                                                 <!--begin::Svg Icon | path: icons/duotone/Layout/Layout-arrange.svg-->
                                                 <span class="svg-icon svg-icon-2">

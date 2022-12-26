@@ -58,10 +58,10 @@
  <!-- Cool Facts Area-->
  <div class="cta-area py-3">
     <div class="container">
-      <div class="cta-text p-4 p-lg-5" style="background-image: url(assets/img/bg-img/24.jpg)">
+      <div class="cta-text p-4 p-lg-5" style="background-image: url('/assets/img/icons/mental-health.png')">
         <h4 class="text-white">Waspadai Pneumonia</h4>
         <p class="text-white">Segera deteksi dengan <br>Klik tombol dibawah ini.</p>
-        <a class="btn btn-warning" href="#">Deteksi Sekarang</a>
+        <a class="btn btn-warning" href="{{ route('screening') }}">Deteksi Sekarang</a>
       </div>
     </div>
 </div>

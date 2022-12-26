@@ -66,7 +66,8 @@
         <div class="background-shape"></div>
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5"><img class="big-logo" src="{{ url('assets/img/core-img/logo-white.png') }}" alt="">
+            <div class="col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5">
+                <img class="big-logo" src="{{ url('assets/img/icons/lungs.png') }}" style="max-width: 10em;" alt="">
               <!-- Register Form-->
               <div class="register-form mt-5 px-4">
                 <form method="POST" action="{{ route('register') }}">

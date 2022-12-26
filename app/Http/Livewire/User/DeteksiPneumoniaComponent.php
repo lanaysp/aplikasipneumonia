@@ -44,7 +44,6 @@ class DeteksiPneumoniaComponent extends Component
         $data_anak = DataAnak::firstOrNew(["user_id" => 1]);
 
         $this->data = $data;
-
         $this->data_anak = $data_anak;
     }
 
@@ -56,6 +55,7 @@ class DeteksiPneumoniaComponent extends Component
                 }
             })->validate();
             try {
+                dd($this->data);
                 $this->data->save();
                 redirect()->route('home');
             } catch (\Throwable $ex) {

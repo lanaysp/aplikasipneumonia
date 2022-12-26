@@ -41,7 +41,7 @@
     <div class="intro-wrapper d-flex align-items-center justify-content-center text-center">
         <!-- Background Shape-->
         <div class="background-shape"></div>
-        <div class="container"><img class="big-logo w-50" src="{{ url('penomoni/logo.png') }}" alt=""></div>
+        <div class="container"><img class="big-logo w-50" src="{{ url('assets/img/icons/lungs.png') }}" alt=""></div>
       </div>
       <div class="get-started-btn"><a class="btn btn-lg w-100" style="background: #F9A7A7; color: #f4f4f4" href="{{ route('login') }}">Mulai</a></div>
     <!-- All JavaScript Files-->

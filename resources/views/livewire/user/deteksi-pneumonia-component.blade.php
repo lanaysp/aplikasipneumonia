@@ -115,10 +115,18 @@
             </div>
             <div class="modal-body">
             @if ($this->data->skor >= 5)
-                <p>Beresiko Pneumonia</p>
+                <h3 class="text-bold">Beresiko Pneumonia</h3>
                 <p>Lanjut Ke Fasilitas Terdekat</p>
+                <div class="text-center">
+                    <img src="{{ url('assets/img/icons/ambulance.png') }}" style="max-width: 50%; align-items: center;" alt="">
+                </div>
             @else
-                Tidak Beresiko
+            <div class="text-center">
+                <img src="{{ url('assets/img/icons/medical-test.png') }}" style="max-width: 50%; align-items: center;" alt="">
+                <h4 class="text-bold">
+                    Tidak Beresiko Pnemonia
+                </h4>
+            </div>
             @endif
             </div>
             @if ($this->data->skor >= 5)
@@ -130,7 +138,7 @@
         </div>
         </div>
     </div>
-    <div wire:ignore.self class="modal fade" id="autoShow" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="autoShowLabel" aria-hidden="false">
+    {{-- <div wire:ignore.self class="modal fade" id="autoShow" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="autoShowLabel" aria-hidden="false">
         <div class="modal-dialog show">
         <div class="modal-content">
             <div class="modal-header">
@@ -170,7 +178,7 @@
             </form>
         </div>
         </div>
-    </div>
+    </div> --}}
 </div>
 
   @push('scripts')

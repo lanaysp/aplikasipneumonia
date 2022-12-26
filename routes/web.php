@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Livewire\Admin\DashboardComponent;
+use App\Http\Livewire\Admin\DataPasienComponent;
 use App\Http\Livewire\Admin\Setting\GeneralComponent;
 use App\Http\Livewire\Admin\Setting\HeroComponent;
 use App\Http\Livewire\Admin\UserListComponent;
@@ -41,6 +42,8 @@ Route::middleware('role:admin|user|faskes')->group(function () {
 Route::middleware('role:admin|faskes')->group(function () {
     Route::prefix('admin')->group(function () {
         Route::get('/dashboard', DashboardComponent::class)->name('admin.dashboard');
+        Route::get('/data-pasien', DataPasienComponent::class)->name('data-pasien');
+
 
     });
 });
