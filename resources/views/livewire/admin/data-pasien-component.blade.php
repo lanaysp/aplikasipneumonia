@@ -47,13 +47,12 @@
             <thead>
                 <!--begin::Table row-->
                 <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                    <th></th>
                     <th class="min-w-125px">Nama Orang Tua</th>
-                    <th class="min-w-125px">Nama Anak</th>
-                    <th class="min-w-125px">Umur Anak</th>
+                    {{-- <th class="min-w-125px">Nama Anak</th>
+                    <th class="min-w-125px">Umur Anak</th> --}}
                     <th class="min-w-125px">Alamat</th>
                     <th class="min-w-125px">No Hp</th>
-                    <th class="min-w-125px">Aksi</th>
+                    {{-- <th class="min-w-125px">Aksi</th> --}}
                 </tr>
                 <!--end::Table row-->
             </thead>
@@ -61,44 +60,30 @@
             <!--begin::Table body-->
             <tbody class="text-gray-600 fw-bold">
                 <!--begin::Table row-->
-                {{-- @foreach ($user as $item)
+                @foreach ($data as $item)
                     <tr>
                         <!--begin::User=-->
-                        <td class="d-flex align-items-center">
-                            <div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
-                                <a href="apps/user-management/users/view.html">
-                                    <div class="symbol-label">
-                                        <img src="{{ url('assets/admin/media/avatars/150-1.jpg') }}" alt="Emma Smith" class="w-100" />
-                                    </div>
-                                </a>
-                            </div>
-                        </td>
                         <td>
                             <div class="d-flex flex-column">
                                 <a href="apps/user-management/users/view.html" class="text-gray-800 text-hover-primary mb-1">
-                                    {{ $item->name }}
+                                    {{ $item->user->name }}
                                 </a>
                             </div>
                         </td>
                         <td>
                             <div class="d-flex flex-column">
-                                <span>{{ $item->email }}</span>
+                                <span>{{ $item->user->alamat }}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex flex-column">
+                                <span>{{ $item->user->telepon }}</span>
                             </div>
                         </td>
                         <!--end::User=-->
-                        <td>
 
-                        </td>
-                        <td>
-                            <div class="badge badge-light-success fw-bolder">Enabled</div>
-                        </td>
-                        <!--begin::Action=-->
-                        <td class="text-end">
-                        <button class="btn btn-sm btn-danger">Hapus</button>
-                        </td>
-                        <!--end::Action=-->
                     </tr>
-                @endforeach --}}
+                @endforeach
                 <!--end::Table row-->
             </tbody>
             <!--end::Table body-->

@@ -29,11 +29,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('splash-component')->name('deteksi');
+    return view('splash-component');
 });
-// Route::get('/terdeteksi', function () {
-//     return view('terdeteksi-component')->name('terdeteksi');
-// });
 
 Route::get('/terdeteksi', SuccessComponent::class)->name('terdeteksi');
 Route::get('/home', HomeComponent::class)->name('home');

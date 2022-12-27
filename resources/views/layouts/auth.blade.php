@@ -44,7 +44,7 @@
       </div>
     </div>
 
-    {{ $slot }}
+    {{-- {{ $slot }} --}}
     @yield('content')
     <!-- All JavaScript Files-->
     <script src="{{ url('assets/js/bootstrap.bundle.min.js') }}"></script>
