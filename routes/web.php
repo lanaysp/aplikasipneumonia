@@ -12,6 +12,7 @@ use App\Http\Livewire\Faskes\BlogComponen;
 use App\Http\Livewire\Faskes\CategoryComponen;
 use App\Http\Livewire\LandingPage\HomeComponent;
 use App\Http\Livewire\LandingPage\SplashComponent;
+use App\Http\Livewire\SuccessComponent;
 use App\Http\Livewire\User\DeteksiPneumoniaComponent;
 use App\Http\Livewire\User\ProfileComponent;
 use Illuminate\Support\Facades\Route;
@@ -28,9 +29,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('splash-component');
+    return view('splash-component')->name('deteksi');
 });
+// Route::get('/terdeteksi', function () {
+//     return view('terdeteksi-component')->name('terdeteksi');
+// });
 
+Route::get('/terdeteksi', SuccessComponent::class)->name('terdeteksi');
 Route::get('/home', HomeComponent::class)->name('home');
 Route::get('/edukasi', EdukasiComponent::class);
 Route::get('/edukasi/detail/{id}', EdukasiDetailComponent::class)->name('detail.edukasi');

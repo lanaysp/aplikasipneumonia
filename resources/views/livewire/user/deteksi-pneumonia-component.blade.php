@@ -16,91 +16,93 @@
         <!-- User Meta Data-->
         <div class="card user-data-card">
             <div class="card-body">
-                <div class="mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" wire:model.debounce="data.batuk" value="1" id="batuk">
-                        <label class="form-check-label" for="batuk">
-                            Mengalami Batuk
-                        </label>
+                <form wire:submit.prevent="submit">
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" wire:model.debounce="data.batuk" value="1" id="batuk">
+                            <label class="form-check-label" for="batuk">
+                                Mengalami Batuk
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" wire:model.debounce="data.kejang" value="1" id="kejang">
-                        <label class="form-check-label" for="kejang">
-                            Mengalami Kejang
-                        </label>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" wire:model.debounce="data.kejang" value="1" id="kejang">
+                            <label class="form-check-label" for="kejang">
+                                Mengalami Kejang
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" wire:model.debounce="data.asi_ya" value="1" id="asi_ya">
-                        <label class="form-check-label" for="asi_ya">
-                            Masih Meminum Asi
-                        </label>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" wire:model.debounce="data.asi_ya" value="1" id="asi_ya">
+                            <label class="form-check-label" for="asi_ya">
+                                Masih Meminum Asi
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" wire:model.debounce="data.asi_tidak" value="1" id="asi_tidak">
-                        <label class="form-check-label" for="asi_tidak">
-                            Tidak Mau Minum Asi
-                        </label>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" wire:model.debounce="data.asi_tidak" value="1" id="asi_tidak">
+                            <label class="form-check-label" for="asi_tidak">
+                                Tidak Mau Minum Asi
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" wire:model.debounce="data.kesadaran" value="1" id="kesadaran">
-                        <label class="form-check-label" for="kesadaran">
-                            Kesadaran Menurun
-                        </label>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" wire:model.debounce="data.kesadaran" value="1" id="kesadaran">
+                            <label class="form-check-label" for="kesadaran">
+                                Kesadaran Menurun
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" wire:model.debounce="data.demam" value="1" id="demam">
-                        <label class="form-check-label" for="demam">
-                            Mengalami Demam
-                        </label>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" wire:model.debounce="data.demam" value="1" id="demam">
+                            <label class="form-check-label" for="demam">
+                                Mengalami Demam
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" wire:model.debounce="data.pilek" value="1" id="pilek">
-                        <label class="form-check-label" for="pilek">
-                            Mengalami Pilek
-                        </label>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" wire:model.debounce="data.pilek" value="1" id="pilek">
+                            <label class="form-check-label" for="pilek">
+                                Mengalami Pilek
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" wire:model.debounce="data.sesak" value="1" id="sesak">
-                        <label class="form-check-label" for="sesak">
-                            Mengalami Sesak Nafas
-                        </label>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" wire:model.debounce="data.sesak" value="1" id="sesak">
+                            <label class="form-check-label" for="sesak">
+                                Mengalami Sesak Nafas
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" wire:model.debounce="data.bab_cair" value="1" id="bab_cair">
-                        <label class="form-check-label" for="bab_cair">
-                            Mengalami BAB Cair
-                        </label>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" wire:model.debounce="data.bab_cair" value="1" id="bab_cair">
+                            <label class="form-check-label" for="bab_cair">
+                                Mengalami BAB Cair
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" wire:model.debounce="data.mendengkur" value="1" id="mendengkur">
-                        <label class="form-check-label" for="mendengkur">
-                            Tidur Mendengkur
-                        </label>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" wire:model.debounce="data.mendengkur" value="1" id="mendengkur">
+                            <label class="form-check-label" for="mendengkur">
+                                Tidur Mendengkur
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="mb-3">
-                    <input type="text" class="form-control" id="skor" wire:model.debounce="data.skor" hidden>
-                </div>
-                <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#KalkulasiModal" type="button">Kalkulasi</button>
-                {{-- <button class="btn btn-warning mt-2 w-100" type="reset">Reset</button> --}}
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="skor" wire:model.debounce="data.skor" hidden>
+                    </div>
+                    <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#KalkulasiModal" type="button">Kalkulasi</button>
+                    {{-- <button class="btn btn-warning mt-2 w-100" type="reset">Reset</button> --}}
+                </form>
             </div>
         </div>
         </div>

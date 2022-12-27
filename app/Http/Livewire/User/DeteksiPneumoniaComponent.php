@@ -29,11 +29,11 @@ class DeteksiPneumoniaComponent extends Component
         'data.skor' => '',
         'data.keterangan' => '',
 
-        'data_anak.nama' => 'required',
-        'data_anak.tanggal_lahir' => 'required',
-        'data_anak.nama_orang_tua' => 'required',
-        'data_anak.no_hp' => 'required',
-        'data_anak.alamat' => 'required',
+        // 'data_anak.nama' => 'required',
+        // 'data_anak.tanggal_lahir' => 'required',
+        // 'data_anak.nama_orang_tua' => 'required',
+        // 'data_anak.no_hp' => 'required',
+        // 'data_anak.alamat' => 'required',
 
     ];
 
@@ -41,10 +41,10 @@ class DeteksiPneumoniaComponent extends Component
     {
         $data = DeteksiPneumonia::firstOrNew(["user_id" => Auth::user()->id]);
 
-        $data_anak = DataAnak::firstOrNew(["user_id" => 1]);
+        // $data_anak = DataAnak::firstOrNew(["user_id" => 1]);
 
         $this->data = $data;
-        $this->data_anak = $data_anak;
+        // $this->data_anak = $data_anak;
     }
 
     public function submit()
@@ -55,30 +55,30 @@ class DeteksiPneumoniaComponent extends Component
                 }
             })->validate();
             try {
-                dd($this->data);
+
                 $this->data->save();
-                redirect()->route('home');
+                redirect()->route('terdeteksi');
             } catch (\Throwable $ex) {
                 Log::error($ex);
                 $this->emit('swal', ['', 'Terjadi kesalahan.', 'error']);
             }
     }
 
-    public function submitDataAnak()
-    {
-        $this->withValidator(function (Validator $validator) {
-            if ($validator->fails()) {
-                    $this->emit('swal', ['Whooops!', $validator->errors()->first(), 'error']);
-                }
-            })->validate();
-            try {
-                // dd($this->data_anak);
-                $this->data_anak->save();
-            } catch (\Throwable $ex) {
-                Log::error($ex);
-                $this->emit('swal', ['', 'Terjadi kesalahan.', 'error']);
-            }
-    }
+    // public function submitDataAnak()
+    // {
+    //     $this->withValidator(function (Validator $validator) {
+    //         if ($validator->fails()) {
+    //                 $this->emit('swal', ['Whooops!', $validator->errors()->first(), 'error']);
+    //             }
+    //         })->validate();
+    //         try {
+    //             // dd($this->data_anak);
+    //             $this->data_anak->save();
+    //         } catch (\Throwable $ex) {
+    //             Log::error($ex);
+    //             $this->emit('swal', ['', 'Terjadi kesalahan.', 'error']);
+    //         }
+    // }
 
     public function updatedData()
     {
