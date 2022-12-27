@@ -34,9 +34,7 @@
     <link rel="stylesheet" href="{{ url('assets/style.css') }}">
     <!-- Web App Manifest-->
     <link rel="manifest" href="{{ url('assets/manifest.json') }}">
-    <audio controls autoplay>
-        <source src="{{ url('assets/audio/backsound.mp3') }}" type="audio/mpeg">
-    </audio>
+    <audio autoplay="true" src="{{ url('assets/audio/backsound.mp3') }}"> </audio>
 
     <script src="https://cdn.tiny.cloud/1/tj8gxz33b5zb1zt73jekaz1r67y18l75lp3cskz3hlrwi0yh/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
