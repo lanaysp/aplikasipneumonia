@@ -34,7 +34,7 @@ Route::get('/', function () {
 
 Route::get('/terdeteksi', SuccessComponent::class)->name('terdeteksi');
 Route::get('/home', HomeComponent::class)->name('home');
-Route::get('/edukasi', EdukasiComponent::class);
+Route::get('/edukasi', EdukasiComponent::class)->name('edukasi');
 Route::get('/edukasi/detail/{id}', EdukasiDetailComponent::class)->name('detail.edukasi');
 
 Route::middleware('role:admin|user|faskes')->group(function () {

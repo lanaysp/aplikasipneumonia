@@ -18,11 +18,14 @@
         @endif
         <!-- Sidenav Nav-->
         <ul class="sidenav-nav ps-0">
-            <li><a href="profile.html"><i class="lni lni-user"></i>My Profile</a></li>
+            <li><a href="{{ route('profile.edit') }}"><i class="lni lni-user"></i>My Profile</a></li>
             {{-- <li><a href="notifications.html"><i class="lni lni-alarm lni-tada-effect"></i>Notifications<span
                         class="ms-3 badge badge-warning">3</span></a></li> --}}
-            <li><a href="pages.html"><i class="lni lni-book"></i>Edukasi</a></li>
-            <li><a href="settings.html"><i class="lni lni-cog"></i>Settings</a></li>
+            <li><a href="{{ route('edukasi') }}"><i class="lni lni-book"></i>Edukasi</a></li>
+            {{-- <li><a href="settings.html"><i class="lni lni-cog"></i>Settings</a></li> --}}
+            @hasanyrole('admin|faskes')
+                <li><a href="{{ route('admin.dashboard') }}"><i class="lni lni-dashboard"></i>Dashboard</a></li>
+            @endhasanyrole
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"><i
