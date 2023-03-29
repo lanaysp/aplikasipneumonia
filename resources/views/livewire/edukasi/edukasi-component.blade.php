@@ -7,12 +7,12 @@
       </div>
       <div class="row g-3">
         <!-- Single Blog Card-->
+        @foreach ($blog as $item)
         <div class="col-12 col-md-6">
           <div class="card blog-card list-card">
             <!-- Post Image-->
-            <div class="post-img"><img src="{{ url('assets/img/bg-img/12.jpg') }}" alt=""></div>
-            <!-- Post Bookmark--><a class="post-bookmark" href="#"><i class="lni lni-bookmark"></i></a>
-            <!-- Read More Button--><a class="btn btn-danger btn-sm read-more-btn" href="blog-details.html">Read More</a>
+            <div class="post-img"><img src="{{ Storage::url($item->thumbnail) }}" alt=""></div>
+            <!-- Read More Button--><a class="btn btn-danger btn-sm read-more-btn" href="{{ route('detail.edukasi', $item->id) }}">Baca Selengkapnya</a>
             <!-- Post Content-->
             <div class="post-content">
               <div class="bg-shapes">
@@ -21,13 +21,12 @@
                 <div class="circle3"></div>
                 <div class="circle4"></div>
               </div>
-              <!-- Post Catagory--><a class="post-catagory d-block" href="#">Review</a>
-              <!-- Post Title--><a class="post-title d-block" href="blog-details.html">The 5 best reviews in Suha</a>
+              <!-- Post Title--><a class="post-title d-block" href="{{ route('detail.edukasi', $item->id) }}">{{ $item->nama }}</a>
               <!-- Post Meta-->
-              <div class="post-meta d-flex align-items-center justify-content-between flex-wrap"><a href="#"><i class="lni lni-user"></i>Suha</a><span><i class="lni lni-timer"></i>2 min</span></div>
             </div>
           </div>
         </div>
+        @endforeach
       </div>
     </div>
 </div>
