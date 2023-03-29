@@ -21,7 +21,7 @@
             <li><a href="{{ route('profile.edit') }}"><i class="lni lni-user"></i>My Profile</a></li>
             {{-- <li><a href="notifications.html"><i class="lni lni-alarm lni-tada-effect"></i>Notifications<span
                         class="ms-3 badge badge-warning">3</span></a></li> --}}
-            <li><a href="notifications.html"><i class="lni lni-alarm lni-tada-effect"></i>Notifications<span class="ms-3 badge badge-warning">3</span></a></li>
+            <li><a href="{{ route('notifikasi') }}"><i class="lni lni-alarm lni-tada-effect"></i>Notifications<span class="ms-3 badge badge-warning">1</span></a></li>
             <li><a href="{{ route('edukasi') }}"><i class="lni lni-book"></i>Edukasi</a></li>
             {{-- <li><a href="settings.html"><i class="lni lni-cog"></i>Settings</a></li> --}}
             @hasanyrole('admin|faskes')

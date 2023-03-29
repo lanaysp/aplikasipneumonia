@@ -14,6 +14,8 @@ use App\Http\Livewire\LandingPage\HomeComponent;
 use App\Http\Livewire\LandingPage\SplashComponent;
 use App\Http\Livewire\SuccessComponent;
 use App\Http\Livewire\User\DeteksiPneumoniaComponent;
+use App\Http\Livewire\User\NotifikasiComponent;
+use App\Http\Livewire\User\NotifikasiDetailComponent;
 use App\Http\Livewire\User\ProfileComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +41,8 @@ Route::get('/edukasi/detail/{id}', EdukasiDetailComponent::class)->name('detail.
 
 Route::middleware('role:admin|user|faskes')->group(function () {
     Route::get('/deteksi-pneumonia', DeteksiPneumoniaComponent::class)->name('screening');
+    Route::get('/notifikasi', NotifikasiComponent::class)->name('notifikasi');
+    Route::get('/notifikasi-detail', NotifikasiDetailComponent::class)->name('notifikasiDetail');
 });
 
 Route::middleware('role:admin|faskes')->group(function () {
