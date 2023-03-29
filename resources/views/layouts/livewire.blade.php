@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="{{ url('assets/style.css') }}">
     <!-- Web App Manifest-->
     <link rel="manifest" href="{{ url('assets/manifest.json') }}">
-    <audio autoplay="true" src="{{ url('assets/audio/backsound.mp3') }}"> </audio>
+    {{-- <audio autoplay="true" src="{{ url('assets/audio/backsound.mp3') }}"> </audio> --}}
 
     <script src="https://cdn.tiny.cloud/1/tj8gxz33b5zb1zt73jekaz1r67y18l75lp3cskz3hlrwi0yh/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -53,11 +53,12 @@
       <div class="container h-100 d-flex align-items-center justify-content-between">
         <!-- Logo Wrapper-->
         <div class="logo-wrapper"><a href="/home"><img style="width: 8%" src="{{ url('penomoni/logo.png') }}" alt=""></a></div>
-        <!-- Search Form-->
-      {{-- @include('layouts.search') --}}
+
         <!-- Navbar Toggler-->
         @if (Auth::user())
-        <div class="suha-navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#suhaOffcanvas" aria-controls="suhaOffcanvas"><span></span><span></span><span></span></div>
+        <div class="p-2">
+            <div class="suha-navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#suhaOffcanvas" aria-controls="suhaOffcanvas"><span></span><span></span><span></span></div>
+        </div>
         @endif
       </div>
     </div>
