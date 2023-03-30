@@ -98,6 +98,22 @@
                         </div>
                     </div>
                     <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" wire:model.debounce="data.lemas" value="1" id="lemas">
+                            <label class="form-check-label" for="lemas">
+                                Lemas Kurang Aktif
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" wire:model.debounce="data.nafsu_makan" value="1" id="nafsu_makan">
+                            <label class="form-check-label" for="nafsu_makan">
+                                Kehilangan Nafsu Makan
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
                         <input type="text" class="form-control" id="skor" wire:model.debounce="data.skor" hidden>
                     </div>
                     <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#KalkulasiModal" type="button">Kalkulasi</button>

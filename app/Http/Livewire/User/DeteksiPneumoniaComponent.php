@@ -28,6 +28,8 @@ class DeteksiPneumoniaComponent extends Component
         'data.mendengkur' => '',
         'data.skor' => '',
         'data.keterangan' => '',
+        'data.lemas' => '',
+        'data.nafsu_makan' => '',
 
         // 'data_anak.nama' => 'required',
         // 'data_anak.tanggal_lahir' => 'required',
